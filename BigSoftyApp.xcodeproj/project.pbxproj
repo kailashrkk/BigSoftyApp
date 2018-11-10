@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		4AF6D01D21967EE100FFC392 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6D01C21967EE100FFC392 /* AppDelegate.swift */; };
-		4AF6D01F21967EE100FFC392 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6D01E21967EE100FFC392 /* ViewController.swift */; };
-		4AF6D02221967EE100FFC392 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AF6D02021967EE100FFC392 /* Main.storyboard */; };
+		4AF6D01F21967EE100FFC392 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6D01E21967EE100FFC392 /* MainViewController.swift */; };
 		4AF6D02421967EE400FFC392 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AF6D02321967EE400FFC392 /* Assets.xcassets */; };
 		4AF6D02721967EE400FFC392 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AF6D02521967EE400FFC392 /* LaunchScreen.storyboard */; };
+		4AF6D03021968D6B00FFC392 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6D02F21968D6A00FFC392 /* LoginViewController.swift */; };
+		4AF6D03321968E7400FFC392 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6D03221968E7400FFC392 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4AF6D01921967EE000FFC392 /* BigSoftyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BigSoftyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AF6D01C21967EE100FFC392 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4AF6D01E21967EE100FFC392 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4AF6D02121967EE100FFC392 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4AF6D01E21967EE100FFC392 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4AF6D02321967EE400FFC392 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4AF6D02621967EE400FFC392 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4AF6D02821967EE500FFC392 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AF6D02F21968D6A00FFC392 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4AF6D03221968E7400FFC392 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,31 @@
 		4AF6D01B21967EE000FFC392 /* BigSoftyApp */ = {
 			isa = PBXGroup;
 			children = (
+				4AF6D03121968E6400FFC392 /* Helpers */,
+				4AF6D02E21967F0D00FFC392 /* Supporting Files */,
+				4AF6D01E21967EE100FFC392 /* MainViewController.swift */,
+				4AF6D02F21968D6A00FFC392 /* LoginViewController.swift */,
+			);
+			path = BigSoftyApp;
+			sourceTree = "<group>";
+		};
+		4AF6D02E21967F0D00FFC392 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				4AF6D01C21967EE100FFC392 /* AppDelegate.swift */,
-				4AF6D01E21967EE100FFC392 /* ViewController.swift */,
-				4AF6D02021967EE100FFC392 /* Main.storyboard */,
 				4AF6D02321967EE400FFC392 /* Assets.xcassets */,
 				4AF6D02521967EE400FFC392 /* LaunchScreen.storyboard */,
 				4AF6D02821967EE500FFC392 /* Info.plist */,
 			);
-			path = BigSoftyApp;
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4AF6D03121968E6400FFC392 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4AF6D03221968E7400FFC392 /* Extensions.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,7 +143,6 @@
 			files = (
 				4AF6D02721967EE400FFC392 /* LaunchScreen.storyboard in Resources */,
 				4AF6D02421967EE400FFC392 /* Assets.xcassets in Resources */,
-				4AF6D02221967EE100FFC392 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,22 +153,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AF6D01F21967EE100FFC392 /* ViewController.swift in Sources */,
+				4AF6D03021968D6B00FFC392 /* LoginViewController.swift in Sources */,
+				4AF6D01F21967EE100FFC392 /* MainViewController.swift in Sources */,
 				4AF6D01D21967EE100FFC392 /* AppDelegate.swift in Sources */,
+				4AF6D03321968E7400FFC392 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4AF6D02021967EE100FFC392 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4AF6D02121967EE100FFC392 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4AF6D02521967EE400FFC392 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -281,7 +293,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = BigSoftyApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/BigSoftyApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -298,7 +310,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = BigSoftyApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/BigSoftyApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
