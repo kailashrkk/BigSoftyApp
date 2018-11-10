@@ -19,7 +19,9 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //self.present(LoginViewController(), animated: true, completion: nil);
+        
+        //TODO: Check for user and then present login if empty
+        self.present(LoginViewController(), animated: true, completion: nil);
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,7 +29,7 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-    fileprivate func setupTabBar(){
+    private func setupTabBar(){
         let homeViewController = UIViewController()
         homeViewController.tabBarItem = UITabBarItem(title: "Home", image: #imageLiteral(resourceName: "home_unselected").withRenderingMode(.alwaysOriginal), selectedImage: #imageLiteral(resourceName: "home_selected").withRenderingMode(.alwaysOriginal));
         
