@@ -9,8 +9,9 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let logoView: UIView = {
         let view = UIView()
@@ -116,9 +117,17 @@ class SignUpViewController: UIViewController {
         setupTopView()
         setupBottomView()
     }
-    //TODO: Handle Logic here
+    
+    override var prefersStatusBarHidden: Bool{
+        return true
+    }
+    //MARK: Button Action Funtions
     @objc func handleProfilePicture(){
         print("Upload profile picture")
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.allowsEditing = true
+        self.present(imagePickerController, animated: true, completion: nil)
     }
     
     @objc func handleSignup(){
@@ -132,15 +141,31 @@ class SignUpViewController: UIViewController {
             Auth.auth().createUser(withEmail: emailText, password: password) { (FirUser, err) in
                 if let error = err {
                     print("There was an error in the register function ", error)
+                    self.showAlertAndDismiss(alert: "There was an unexpected error, please try again")
                 }
                 guard let uid = Auth.auth().currentUser?.uid else {return}
                 print("Successfully signed up, here is Fire Auth: ", uid)
-                let userDictionary: [String: Any] = ["email": emailText, "username": userText, "password": password]
-                Database.database().reference().child("users").child(uid).updateChildValues(userDictionary, withCompletionBlock: { (err, _) in
-                    self.dismiss(animated: true, completion: nil)
+                guard let image = self.profileImage.image else {return}
+                guard let profileImageData = UIImageJPEGRepresentation(image,0.5) else {return}
+                let storageRef = Storage.storage().reference().child("profilepicture")
+                storageRef.putData(profileImageData, metadata: nil, completion: { (metadata, err) in
+                    if let error = err{
+                        print("Failed to upload profile image with error: ", error)
+                        self.showAlertAndDismiss(alert: "There was an unexpected error, please try again")
+                    }
+                    storageRef.downloadURL { url, err in
+                        if let error = err {
+                            print("Failed to get download url with error:", error)
+                            self.showAlertAndDismiss(alert: "There was an unexpected error, please try again")
+                        }
+                        guard let profileURL = url else {return}
+                        let userDictionary: [String: Any] = ["email": emailText, "username": userText, "password": password, "profileImageURL": profileURL.absoluteString]
+                        Database.database().reference().child("user").child(uid).updateChildValues(userDictionary, withCompletionBlock: { (err, _) in
+                            self.dismiss(animated: true, completion: nil)
+                        })
+                    }
                 })
             }
-            
         }else{
             showAlertAndDismiss(alert: "Please make sure all details are entered correctly")
         }
@@ -194,7 +219,13 @@ class SignUpViewController: UIViewController {
         }
     }
     
-    override var prefersStatusBarHidden: Bool{
-        return true
+    //MARK: Delegate methods
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let editedImage = info["UIImagePickerControllerEditedImage"] as? UIImage {
+            self.profileImage.image = editedImage
+        }else if let originalImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
+            self.profileImage.image = originalImage
+        }
+        self.dismiss(animated: true, completion: nil)
     }
 }

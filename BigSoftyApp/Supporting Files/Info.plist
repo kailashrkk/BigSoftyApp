@@ -4,6 +4,12 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>BigSofty needs access for Profile Photos and Feed Photos</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>BigSofty needs access for Profile Photos and Feed Photos</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>BigSofty needs access for Profile Photos and Feed Photos</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

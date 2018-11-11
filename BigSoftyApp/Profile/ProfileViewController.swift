@@ -14,6 +14,7 @@ class ProfileViewController: UICollectionViewController {
     let signOutButton:UIButton = {
         let btn = UIButton()
         btn.setTitle("Sign Out", for: .normal)
+        btn.backgroundColor = UIColor.blue
         btn.addTarget(self, action: #selector(handleSignOut), for: .touchUpInside)
         return btn
     }()
@@ -29,9 +30,9 @@ class ProfileViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        collectionView?.backgroundColor = .white
         view.addSubview(signOutButton)
-        signOutButton.anchor(left: view.leftAnchor, right: view.rightAnchor, top: view.topAnchor, bottom: view.bottomAnchor, paddingLeft: 0, paddingRight: 0, paddingTop: 0, paddingBottom: 0, width: 0, height: 0)
+        signOutButton.anchor(left: view.leftAnchor, right: nil, top: view.topAnchor, bottom: nil, paddingLeft: 0, paddingRight: 0, paddingTop: 0, paddingBottom: 0, width: view.frame.width, height: 250)
         
     }
 }

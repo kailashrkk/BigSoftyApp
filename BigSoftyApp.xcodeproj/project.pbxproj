@@ -10,6 +10,7 @@
 		4A00A0962197415400F46B81 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A00A0952197415400F46B81 /* SignupViewController.swift */; };
 		4A00A098219784D500F46B81 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A00A097219784D400F46B81 /* GoogleService-Info.plist */; };
 		4A788C7A2197D0C400BB22DD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A788C792197D0C300BB22DD /* ProfileViewController.swift */; };
+		4AF3C0A22198796E0028C4F9 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF3C0A12198796E0028C4F9 /* UserModel.swift */; };
 		4AF6D01D21967EE100FFC392 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6D01C21967EE100FFC392 /* AppDelegate.swift */; };
 		4AF6D01F21967EE100FFC392 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6D01E21967EE100FFC392 /* MainViewController.swift */; };
 		4AF6D02421967EE400FFC392 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AF6D02321967EE400FFC392 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 		4A00A0952197415400F46B81 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		4A00A097219784D400F46B81 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4A788C792197D0C300BB22DD /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		4AF3C0A12198796E0028C4F9 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		4AF6D01921967EE000FFC392 /* BigSoftyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BigSoftyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AF6D01C21967EE100FFC392 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4AF6D01E21967EE100FFC392 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,14 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		4AF3C0A0219879570028C4F9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4AF3C0A12198796E0028C4F9 /* UserModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		4AF6D01021967EE000FFC392 = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +87,7 @@
 		4AF6D01B21967EE000FFC392 /* BigSoftyApp */ = {
 			isa = PBXGroup;
 			children = (
+				4AF3C0A0219879570028C4F9 /* Models */,
 				4A788C782197D0AD00BB22DD /* Profile */,
 				4AF6D03421969ED500FFC392 /* Login */,
 				4AF6D03121968E6400FFC392 /* Helpers */,
@@ -251,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A788C7A2197D0C400BB22DD /* ProfileViewController.swift in Sources */,
+				4AF3C0A22198796E0028C4F9 /* UserModel.swift in Sources */,
 				4AF6D03021968D6B00FFC392 /* LoginViewController.swift in Sources */,
 				4AF6D01F21967EE100FFC392 /* MainViewController.swift in Sources */,
 				4A00A0962197415400F46B81 /* SignupViewController.swift in Sources */,
