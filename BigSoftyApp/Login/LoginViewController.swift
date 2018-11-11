@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class LoginViewController: UIViewController {
     
@@ -78,6 +80,14 @@ class LoginViewController: UIViewController {
         setupTopView()
         setupBottomView()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if (Auth.auth().currentUser?.uid != nil){
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+    }
     //TODO: Handle logic here
     @objc func handleLogin(){
         print("Handle login and segue to mainvc")
@@ -85,7 +95,19 @@ class LoginViewController: UIViewController {
         guard let passwordText = passwordTextField.text else {return}
         if usernametext.count <= 0 || passwordText.count <= 0 {
            showAlertAndDismiss(alert: "Please enter a valid username or password")
+            return
         }
+        Auth.auth().signIn(withEmail: usernametext, password: passwordText, completion: { (data, err) in
+            if let error = err {
+                print("There was an error in the register function ", error)
+            }
+            guard let uid = Auth.auth().currentUser?.uid else {return}
+            print("Successfully signed up, here is Fire Auth: ", uid)
+//            let userDictionary: [String: Any] = ["email": emailText, "username": userText, "password": password]
+//            Database.database().reference().child("users").child(uid).updateChildValues(userDictionary, withCompletionBlock: { (err, _) in
+                self.dismiss(animated: true, completion: nil)
+//            })
+        })
     }
     
     @objc func handleSignUp(){

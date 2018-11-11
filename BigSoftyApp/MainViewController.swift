@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class MainViewController: UITabBarController, UITabBarControllerDelegate {
 
@@ -19,9 +21,11 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        //TODO: Check for user and then present login if empty
-        self.present(LoginViewController(), animated: true, completion: nil);
+        //Check for user and then present login if empty
+       // try! Auth.auth().signOut()
+        if Auth.auth().currentUser?.uid == nil {
+            self.present(LoginViewController(), animated: true, completion: nil);
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,7 +37,7 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
         let homeViewController = UIViewController()
         homeViewController.tabBarItem = UITabBarItem(title: "Home", image: #imageLiteral(resourceName: "home_unselected").withRenderingMode(.alwaysOriginal), selectedImage: #imageLiteral(resourceName: "home_selected").withRenderingMode(.alwaysOriginal));
         
-        let profileViewController = UIViewController()
+        let profileViewController = ProfileViewController(collectionViewLayout: UICollectionViewLayout())
         profileViewController.tabBarItem = UITabBarItem(title: "Profile", image: #imageLiteral(resourceName: "user_unselected").withRenderingMode(.alwaysOriginal), selectedImage: #imageLiteral(resourceName: "user_selected").withRenderingMode(.alwaysOriginal));
         
         let cameraViewController = UIViewController()

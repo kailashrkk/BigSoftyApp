@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class SignUpViewController: UIViewController {
     
@@ -29,6 +31,15 @@ class SignUpViewController: UIViewController {
        btn.setImage(#imageLiteral(resourceName: "add-user"), for: .normal)
         btn.addTarget(self, action: #selector(handleProfilePicture), for: .touchUpInside)
         return btn
+    }()
+    
+    let emailTextField: UITextField = {
+        let user = UITextField()
+        user.placeholder = "Enter Email"
+        user.textAlignment = .center
+        user.backgroundColor = UIColor(white: 0.95, alpha: 1.0)
+        user.layer.cornerRadius = 5.0
+        return user
     }()
     
     let usernameTextField: UITextField = {
@@ -112,11 +123,23 @@ class SignUpViewController: UIViewController {
     
     @objc func handleSignup(){
         print("Handle signup and segue to mainvc")
+        guard let emailText = emailTextField.text else {return}
         guard let userText = usernameTextField.text else {return}
         guard let password = passwordTextField.text else {return}
         guard let verifyPassword = verifyPasswordTextField.text else {return}
         
-        if userText.count > 0 && password.count > 0 && verifyPassword.count > 0 {
+        if emailText.count > 0 && userText.count > 0 && password.count > 0 && verifyPassword.count > 0 {
+            Auth.auth().createUser(withEmail: emailText, password: password) { (FirUser, err) in
+                if let error = err {
+                    print("There was an error in the register function ", error)
+                }
+                guard let uid = Auth.auth().currentUser?.uid else {return}
+                print("Successfully signed up, here is Fire Auth: ", uid)
+                let userDictionary: [String: Any] = ["email": emailText, "username": userText, "password": password]
+                Database.database().reference().child("users").child(uid).updateChildValues(userDictionary, withCompletionBlock: { (err, _) in
+                    self.dismiss(animated: true, completion: nil)
+                })
+            }
             
         }else{
             showAlertAndDismiss(alert: "Please make sure all details are entered correctly")
@@ -154,7 +177,7 @@ class SignUpViewController: UIViewController {
         
         self.loginSegueBtn.anchor(left: self.view.leftAnchor, right: self.view.rightAnchor, top: nil, bottom: self.view.bottomAnchor, paddingLeft: 40, paddingRight: -40, paddingTop: 0, paddingBottom: -20, width: 0, height: 0)
         
-        let stackView = UIStackView(arrangedSubviews: [usernameTextField, passwordTextField,verifyPasswordTextField, alertText, submitButton,termsAndConditionsButton])
+        let stackView = UIStackView(arrangedSubviews: [emailTextField,usernameTextField, passwordTextField,verifyPasswordTextField, alertText, submitButton,termsAndConditionsButton])
         stackView.axis = .vertical
         stackView.spacing = 10
         stackView.distribution = .fillEqually

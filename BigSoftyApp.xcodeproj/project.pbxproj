@@ -8,16 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		4A00A0962197415400F46B81 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A00A0952197415400F46B81 /* SignupViewController.swift */; };
+		4A00A098219784D500F46B81 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A00A097219784D400F46B81 /* GoogleService-Info.plist */; };
+		4A788C7A2197D0C400BB22DD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A788C792197D0C300BB22DD /* ProfileViewController.swift */; };
 		4AF6D01D21967EE100FFC392 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6D01C21967EE100FFC392 /* AppDelegate.swift */; };
 		4AF6D01F21967EE100FFC392 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6D01E21967EE100FFC392 /* MainViewController.swift */; };
 		4AF6D02421967EE400FFC392 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AF6D02321967EE400FFC392 /* Assets.xcassets */; };
 		4AF6D02721967EE400FFC392 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AF6D02521967EE400FFC392 /* LaunchScreen.storyboard */; };
 		4AF6D03021968D6B00FFC392 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6D02F21968D6A00FFC392 /* LoginViewController.swift */; };
 		4AF6D03321968E7400FFC392 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF6D03221968E7400FFC392 /* Extensions.swift */; };
+		A55E88209D30700D39A9A7B4 /* Pods_BigSoftyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2400A6EA222C09FC3CA0F83 /* Pods_BigSoftyApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4A00A0952197415400F46B81 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		4A00A097219784D400F46B81 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4A788C792197D0C300BB22DD /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4AF6D01921967EE000FFC392 /* BigSoftyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BigSoftyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AF6D01C21967EE100FFC392 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4AF6D01E21967EE100FFC392 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +31,9 @@
 		4AF6D02821967EE500FFC392 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AF6D02F21968D6A00FFC392 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4AF6D03221968E7400FFC392 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		81293FF0B7554C2E33640D7B /* Pods-BigSoftyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BigSoftyApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BigSoftyApp/Pods-BigSoftyApp.debug.xcconfig"; sourceTree = "<group>"; };
+		A2400A6EA222C09FC3CA0F83 /* Pods_BigSoftyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BigSoftyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4784C17A6952205C5889498 /* Pods-BigSoftyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BigSoftyApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BigSoftyApp/Pods-BigSoftyApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +41,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A55E88209D30700D39A9A7B4 /* Pods_BigSoftyApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A788C782197D0AD00BB22DD /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				4A788C792197D0C300BB22DD /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		4AF6D01021967EE000FFC392 = {
 			isa = PBXGroup;
 			children = (
 				4AF6D01B21967EE000FFC392 /* BigSoftyApp */,
 				4AF6D01A21967EE000FFC392 /* Products */,
+				E209EE3A5C06417AF42A85C7 /* Pods */,
+				A70F1AF9BCD511ED7FF79E0A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +77,7 @@
 		4AF6D01B21967EE000FFC392 /* BigSoftyApp */ = {
 			isa = PBXGroup;
 			children = (
+				4A788C782197D0AD00BB22DD /* Profile */,
 				4AF6D03421969ED500FFC392 /* Login */,
 				4AF6D03121968E6400FFC392 /* Helpers */,
 				4AF6D02E21967F0D00FFC392 /* Supporting Files */,
@@ -73,6 +93,7 @@
 				4AF6D02321967EE400FFC392 /* Assets.xcassets */,
 				4AF6D02521967EE400FFC392 /* LaunchScreen.storyboard */,
 				4AF6D02821967EE500FFC392 /* Info.plist */,
+				4A00A097219784D400F46B81 /* GoogleService-Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -94,6 +115,23 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		A70F1AF9BCD511ED7FF79E0A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A2400A6EA222C09FC3CA0F83 /* Pods_BigSoftyApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E209EE3A5C06417AF42A85C7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				81293FF0B7554C2E33640D7B /* Pods-BigSoftyApp.debug.xcconfig */,
+				F4784C17A6952205C5889498 /* Pods-BigSoftyApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -101,9 +139,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4AF6D02B21967EE500FFC392 /* Build configuration list for PBXNativeTarget "BigSoftyApp" */;
 			buildPhases = (
+				850538A906FEBB54869FC507 /* [CP] Check Pods Manifest.lock */,
 				4AF6D01521967EE000FFC392 /* Sources */,
 				4AF6D01621967EE000FFC392 /* Frameworks */,
 				4AF6D01721967EE000FFC392 /* Resources */,
+				5553C80EA8F95BD403F685E7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,16 +194,63 @@
 			files = (
 				4AF6D02721967EE400FFC392 /* LaunchScreen.storyboard in Resources */,
 				4AF6D02421967EE400FFC392 /* Assets.xcassets in Resources */,
+				4A00A098219784D500F46B81 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5553C80EA8F95BD403F685E7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BigSoftyApp/Pods-BigSoftyApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BigSoftyApp/Pods-BigSoftyApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		850538A906FEBB54869FC507 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BigSoftyApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4AF6D01521967EE000FFC392 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A788C7A2197D0C400BB22DD /* ProfileViewController.swift in Sources */,
 				4AF6D03021968D6B00FFC392 /* LoginViewController.swift in Sources */,
 				4AF6D01F21967EE100FFC392 /* MainViewController.swift in Sources */,
 				4A00A0962197415400F46B81 /* SignupViewController.swift in Sources */,
@@ -302,6 +389,7 @@
 		};
 		4AF6D02C21967EE500FFC392 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81293FF0B7554C2E33640D7B /* Pods-BigSoftyApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -319,6 +407,7 @@
 		};
 		4AF6D02D21967EE500FFC392 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4784C17A6952205C5889498 /* Pods-BigSoftyApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
